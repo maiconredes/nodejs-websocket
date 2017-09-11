@@ -1,0 +1,26 @@
+{
+  "name": "pubsub",
+  "version": "0.0.1",
+  "description": "RealKey PubSub service",
+  "private": true,
+  "main": "pusher.js",
+  "scripts": {
+    "start": "node server.js",
+    "eslint": "node_modules/.bin/eslint ."
+  },
+  "pre-commit": [
+    "eslint",
+    "test"
+  ],
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "raven": "^2.1.2",
+    "ws": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.4.4",
+    "yarn": "^0.24.6"
+  }
+}

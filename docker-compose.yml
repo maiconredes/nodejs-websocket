@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+    socket:
+      build: .
+      ports:
+        - "8082:8082"
+      environment:
+        - NODE_ENV=dev
+        - NODE_DEBUG=cluster,net,http,fs,tls,module
+      command: npm start
