@@ -1,17 +1,27 @@
 {
   "name": "pubsub",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "RealKey PubSub service",
   "private": true,
   "main": "pusher.js",
   "scripts": {
     "start": "node server.js",
-    "eslint": "node_modules/.bin/eslint ."
+    "eslint": "node_modules/.bin/eslint .",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "pre-commit": [
     "eslint",
     "test"
   ],
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ]
+  },
   "dependencies": {
     "dotenv": "^4.0.0",
     "raven": "^2.1.2",
@@ -21,6 +31,12 @@
     "eslint": "^4.5.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.4.4",
-    "yarn": "^0.24.6"
+    "yarn": "^0.24.6",
+    "semantic-release": "^15.9.12",
+    "travis-deploy-once": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WesleyCharlesBlake/nodejs-websocket.git"
   }
 }
