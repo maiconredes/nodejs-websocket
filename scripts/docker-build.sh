@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ -n "${TRAVIS_TAG}" ]; then 
-    TAG=${TRAVIS_TAG}; else
-    TAG="v-$(git log -1 --pretty=%h)-beta";
-fi
+TAG="v-$(git log -1 --pretty=%h)-beta";
 
 docker build -t "${REPO}":"${TAG}" .
 
