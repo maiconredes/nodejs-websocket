@@ -13,6 +13,9 @@ before_deploy:
 deploy:
   provider: script
   script: bash ./scripts/docker-push.sh
+  on:
+    all_branches: true
+    tags: true
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
 branches:
