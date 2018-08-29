@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t "${REPO}":"${TAG}" .
+docker build -t "${REPO}" .
