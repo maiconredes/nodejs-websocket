@@ -17,6 +17,3 @@ deploy:
       all_branches: true
 after_deploy:
   - npm run travis-deploy-once "npm run semantic-release"
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
