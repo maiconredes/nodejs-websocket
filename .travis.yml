@@ -6,9 +6,6 @@ env:
   - REPO=wesleycharlesblake/nodejs-web-socket
 node_js:
   - '10'
-  - '9'
-  - '8'
-  - '6'
 script:
   - echo "run tests"
 before_deploy:
