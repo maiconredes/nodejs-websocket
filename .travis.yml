@@ -10,7 +10,6 @@ script:
   - echo "run tests"
 before_deploy:
   - bash ./scripts/docker-build.sh
-  - bash ./scripts/docker-tag.sh
 deploy:
   provider: script
   script: bash ./scripts/docker-push.sh
