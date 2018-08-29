@@ -6,6 +6,6 @@ if [ -n "${TRAVIS_TAG}" ]; then
 fi
 
 if [ "${TRAVIS_BRANCH}" == "master" ] && [ "${TRAVIS_PULL_REQUEST_BRANCH}" = "" ]; then 
-    docker tag "${REPO}":"${TAG}" "${REPO}":latest;  else
-    docker tag "${REPO}":"${TAG}" ;
+    docker tag "${REPO}" "${REPO}":"${TAG}" "${REPO}":latest;  else
+    docker tag "${REPO}" "${REPO}":"${TAG}" ;
 fi
