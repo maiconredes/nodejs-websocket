@@ -11,13 +11,13 @@ script:
 before_deploy:
   - bash ./scripts/docker-build.sh
 deploy:
-  provider: script
-  script: bash ./scripts/docker-push.sh
-  on:
-    all_branches: true
-    tags: true
+  - provider: script
+    script: bash ./scripts/docker-push.sh
+    on:
+      tags: true
+  - provider: script
+    script: bash ./scripts/docker-push.sh
+    on:
+      all_branches: true
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
