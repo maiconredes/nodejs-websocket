@@ -8,22 +8,16 @@ node_js:
   - '10'
 script:
   - echo "run tests"
-
-jobs:
-  include:
-    - stage: release
-      language: node_js
-      node_js: '10'
-      services:
-        - docker
-      script:
-        - docker build -t wesleycharlesblake/nodejs-web-socket .
-        - npm run semantic-release
- 
-stages:
-  - name: release
-    if: branch = master AND type = push AND fork = false
- 
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+before_deploy:
+  - bash ./scripts/docker-build.sh
+deploy:
+  - provider: script
+    script: bash ./scripts/docker-push.sh
+    on:
+      tags: true
+  - provider: script
+    script: bash ./scripts/docker-push.sh
+    on:
+      all_branches: true
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
