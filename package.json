@@ -16,10 +16,16 @@
   ],
   "release": {
     "verifyConditions": [
-      "@semantic-release/github"
+      "@semantic-release/github",
+      "semantic-release-docker"
     ],
     "publish": [
-      "@semantic-release/github"
+      "@semantic-release/github",
+      {
+        "path": "semantic-release-docker",
+        "name": "wesleycharlesblake/nodejs-web-socket"
+      }
+
     ]
   },
   "dependencies": {
@@ -33,6 +39,7 @@
     "prettier": "^1.4.4",
     "yarn": "^0.24.6",
     "semantic-release": "^15.9.12",
+    "semantic-release-docker": "^2.1.0",
     "travis-deploy-once": "^5.0.4"
   },
   "repository": {
