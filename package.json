@@ -19,14 +19,15 @@
       "@semantic-release/github",
       "semantic-release-docker"
     ],
+    "prepare": ["@semantic-release/npm"],
     "publish": [
       "@semantic-release/github",
       {
         "path": "semantic-release-docker",
         "name": "wesleycharlesblake/nodejs-web-socket"
       }
-
-    ]
+    ],
+    "npmPublish": false
   },
   "dependencies": {
     "dotenv": "^4.0.0",
