@@ -1,0 +1,8 @@
+stages:
+- name: Static Analysis
+  steps:
+  - runScriptConfig:
+      image: node:latest
+      shellScript: yarn lint
+timeout: 60
+notification: {}
