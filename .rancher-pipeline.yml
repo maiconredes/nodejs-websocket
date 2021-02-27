@@ -3,6 +3,6 @@ stages:
   steps:
   - runScriptConfig:
       image: node:latest
-      shellScript: yarn-lint
+      shellScript: npm lint
 timeout: 60
 notification: {}
