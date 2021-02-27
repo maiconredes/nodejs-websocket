@@ -3,6 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: node:latest
-      shellScript: yarn init
+      shellScript: yarn add --dev eslint
+
 timeout: 60
 notification: {}
