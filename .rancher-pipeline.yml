@@ -3,7 +3,6 @@ stages:
   steps:
   - runScriptConfig:
       image: node:latest
-      shellScript: yarn run start
 
 timeout: 60
 notification: {}
